@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پروژه آرشا | Arsha Project</title>
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      margin: 0;
+      background: #fefefe;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to left, #0f172a, #1e3a8a);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      background: #1e3a8a;
+      padding: 1rem;
+      color: white;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    .section {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .media {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+    iframe, model-viewer {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .btn {
+      background: #2563eb;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f1f5f9;
+    }
+    .lang-switcher {
+      text-align: center;
+      margin: 1rem;
+    }
+    .lang-switcher a {
+      margin: 0 1rem;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>پروژه آرشا | Arsha Project</h1>
+  <p>قدم بزن در خانه‌ای که آینده‌ات در آن روشن است</p>
+</header>
+
+<nav>
+  <div>آرشا | Arsha</div>
+  <div>
+    <a href="#about">درباره</a>
+    <a href="#gallery">گالری</a>
+    <a href="#contact">تماس</a>
+  </div>
+</nav>
+
+<div class="lang-switcher">
+  <a onclick="switchLang('fa')">فارسی</a>|
+  <a onclick="switchLang('en')">English</a>
+</div>
+
+<section class="section" id="about">
+  <h2>نمای سه‌بعدی / 3D View</h2>
+  <div class="media">
+    <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" auto-rotate camera-controls ar alt="Arsha 3D view"></model-viewer>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <h2>ویدیوی معرفی / Intro Video</h2>
+  <div class="media">
+    <iframe src="https://aparat.com/v/yiraxu2" title="Arsha Intro Video" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="section">
+  <h2>تور مجازی / Virtual Tour</h2>
+  <p>برای تجربه کامل از فضای داخلی، وارد تور مجازی شوید / Experience the interior virtually:</p>
+  <a href="https://app.seekbeak.com/v/LrqV3J451bp" class="btn" target="_blank">ورود / Enter</a>
+</section>
+
+<section class="section" id="contact">
+  <h2>ارتباط با ما / Contact Us</h2>
+  <form action="mailto:contact@arshaproject.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="نام شما / Your Name" required><br><br>
+    <input type="email" name="email" placeholder="ایمیل / Email" required><br><br>
+    <textarea name="message" placeholder="پیام شما / Your Message" rows="5" required></textarea><br><br>
+    <button type="submit" class="btn">ارسال / Send</button>
+  </form>
+</section>
+
+<footer>
+  طراحی شده برای پروژه ساختمانی آرشا | Designed for Arsha Real Estate Project | © 2025
+</footer>
+
+<script>
+function switchLang(lang) {
+  if(lang === 'en') document.body.setAttribute('dir', 'ltr');
+  else document.body.setAttribute('dir', 'rtl');
+}
+</script>
+
+</body>
+</html>
